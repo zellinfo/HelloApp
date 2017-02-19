@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)http://m.jiedianqian.com/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>不知道</title>
+    <meta content="这里是网站关键词" name="keywords">
+    <meta content="这里是网站介绍"
+          name="description">
+    <meta name="viewport" id="viewport"
+          content="width=400,user-scalable=no,target-densitydpi=device-dpi,initial-scale=0.5">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="baidu-site-verification" content="sx8E1jvIfp">
+    <script src="../script/jquery.js"></script>
+    <script src="../script/bootstrap.js"></script>
+    <script src="../script/hm.js"></script>
+    <script type="text/javascript" async="" src="../script/vds.js"></script>
+    <script type="text/javascript">if (document.location.hash && document.location.pathname.indexOf('index.html') == -1) {
+        var a = location.href.substr(location.origin.length + 1);
+        window.location.href = location.origin + '/index.html' + a;
+    }</script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/swiper.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript">var bodywidth = document.getElementsByTagName('html')[0].clientWidth;
+    var screenwidth = window.screen.width;
+    var viewPortScale;
+    var dpr = window.devicePixelRatio;
+
+    if (bodywidth == screenwidth) {
+        document.getElementById('viewport').setAttribute('content', 'user-scalable=no,width=' + screenwidth);
+        document.getElementsByTagName('html')[0].style.cssText = 'font-size:' + screenwidth / 720 * 10 + 'px';
+    } else {
+        if (dpr <= 2) {
+            viewPortScale = 1 / window.devicePixelRatio;
+        } else {
+            //- UC 已修复这个BUG
+            //- if (window.navigator.userAgent.indexOf('UCBrowser') !== -1) {
+            //-     viewPortScale =1 .5;
+            //- }
+            viewPortScale = .5;
+        }
+        if (bodywidth < screenwidth) {
+            // 卡牛APP内
+            document.getElementById('viewport').setAttribute('content', 'width=735' + ',user-scalable=no,target-densitydpi=device-dpi,initial-scale=1');
+            if (window.navigator.userAgent.indexOf('UCBrowser') !== -1) {
+                document.getElementById('viewport').setAttribute('content', 'width=device-width' + ',user-scalable=no,target-densitydpi=device-dpi,initial-scale=1.5');
+            }
+        } else {
+            document.getElementById('viewport').setAttribute('content', 'width=' + screenwidth + ',user-scalable=no,target-densitydpi=device-dpi,initial-scale=' + viewPortScale);
+        }
+    }</script>
+</head>
+<body>
+<div class="no-select" id="app" style="min-height: 100%">
+    <div class="mainWrap pad">
+        <section class="sec article forum">
+            <div class="topT">
+                <div class="icon"></div>
+                <div class="title">贷款攻略</div>
+            </div>
+            <div class="contentF">
+<!--                <div class="itemC"><a href="http://m.jiedianqian.com/read/1237" title="重磅！消费金融领域第一份新场景排行榜发布">【资讯】
+                    重磅！消费金融领域第一份新场景排行榜发布</a></div>
+                <div class="itemC"><a href="http://m.jiedianqian.com/read/1236" title="融之家借点钱三方面突围消费金融生态圈">【资讯】
+                    融之家借点钱三方面突围消费金融生态圈</a></div>
+                <div class="itemC"><a href="http://m.jiedianqian.com/read/1315" title="无抵押无担保贷款怎么贷？">【问答】
+                    无抵押无担保贷款怎么贷？</a></div>-->
+            </div>
+        </section>
+    </div>
+</div>
+
+<script type="text/javascript" src="../script/zepto.min.js"></script>
+<script type="text/javascript" src="../script/clipboard.min.js"></script>
+<script type="text/javascript" src="../script/js-cookie.js"></script>
+<script type="text/javascript" src="../script/main.js"></script>
+<script type="text/javascript" src="../script/download.js"></script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/SHA1.js"></script>
+<script type="text/javascript" src="../script/APICloud-rest.js"></script>
+<script type="text/javascript" src="../script/doT.min.js"></script>
+<script type="text/x-dot-template" id="news">
+	{{ for (var i = 0; i < it.length; i++) { }}
+		<div class="itemC">
+			<a onclick="fnOpenNewsWin('{{=it[i].id}}');" title="{{=it[i].title}}">
+				{{=it[i].type}}{{=it[i].title}}
+			</a>
+		</div>
+	{{ }; }}
+</script>
+
+<script type="text/javascript">
+	var skip = 0;
+	var limit = 10;
+	
+	function fnOpenNewsWin (newsId) {
+		api.openWin({
+		    name: 'news',
+		    url: 'news.html',
+		    bounces: false,
+		    pageParam: {newsId : newsId}
+		});
+	}
+	
+	function fnUpdateList (data_) {
+		var newsText = $api.byId('news').text;
+		var fnListT = doT.template(newsText);
+		var html = fnListT(data_);
+		var list = $api.dom('.contentF');
+		$api.append(list, html);
+		api.parseTapmode();
+	}
+	
+	function fnLoadData(reload_){
+		var appId = 'A6972212136837';
+        var appKey = '3035EBAC-DB7A-3A35-9300-91D8959EF9C5';
+    	var client = new Resource(appId, appKey);
+		var news = client.Factory("new");
+		if (reload_) {
+			skip = 0;
+		}
+		news.query({
+		  "filter": {
+		    "where": {},
+		    "skip": skip,
+		    "limit": limit
+		  }
+		},function(ret,err){
+		  if (ret) {
+		  	skip += limit;
+		  	if (reload_) {
+		  		$api.dom('.contentF').innerHTML = '';
+		  	}
+		  	fnUpdateList(ret);
+		  }
+		});
+		api.hideProgress();
+		api.refreshHeaderLoadDone();
+	}
+	
+	apiready = function(){ 
+		
+//  	fnStartLocation();
+    	api.addEventListener({
+    	    name: 'scrolltobottom',
+    	    extra: {
+    	    	threshold: 300
+    	    }
+    	}, function(ret, err){
+    	    fnLoadData(false);
+    	});
+    	api.setRefreshHeaderInfo({
+    		bgColor: '#F0F0F0'
+    	}, function(ret, err){
+    		fnLoadData(true);
+    	});
+    	//api.refreshHeaderLoading();
+    	api.showProgress({
+    	    title: '加载中',
+    	    text: ' 请稍后...',
+    	    modal:  true
+    	});
+    	fnLoadData(false);
+    };
+</script>
+</body>
+</html>

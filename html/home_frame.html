@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025)http://m.jiedianqian.com/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>不知道</title>
+    <meta content="这里是网站关键词" name="keywords">
+    <meta content="这里是网站介绍"
+          name="description">
+    <meta name="viewport" id="viewport"
+          content="width=400,user-scalable=no,target-densitydpi=device-dpi,initial-scale=0.5">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="baidu-site-verification" content="sx8E1jvIfp">
+    <script src="../script/jquery.js"></script>
+    <script src="../script/bootstrap.js"></script>
+    <script src="../script/hm.js"></script>
+    <script type="text/javascript" async="" src="../script/vds.js"></script>
+    <script type="text/javascript">if (document.location.hash && document.location.pathname.indexOf('index.html') == -1) {
+        var a = location.href.substr(location.origin.length + 1);
+        window.location.href = location.origin + '/index.html' + a;
+    }</script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/swiper.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+    .swipe {
+        overflow: hidden;
+        visibility: hidden;
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .swipe-wrap {
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .swipe-wrap > div {
+        float: left;
+        width: 100%;
+        height: 200px;
+        position: relative;
+        background-size: auto 230px;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+	/*.swipe-wrap > div:nth-child(1) {
+        background-image: url(../image/1.jpg);
+        background-size:cover;
+    }
+    
+    .swipe-wrap > div:nth-child(2) {
+        background-image: url(../image/2.jpg);
+        background-size:cover;
+    }
+    
+    .swipe-wrap > div:nth-child(3) {
+        background-image: url(../image/3.jpg);
+        background-size:cover;
+    } */
+    </style>
+    
+    <script type="text/javascript">var bodywidth = document.getElementsByTagName('html')[0].clientWidth;
+    var screenwidth = window.screen.width;
+    var viewPortScale;
+    var dpr = window.devicePixelRatio;
+
+    if (bodywidth == screenwidth) {
+        document.getElementById('viewport').setAttribute('content', 'user-scalable=no,width=' + screenwidth);
+        document.getElementsByTagName('html')[0].style.cssText = 'font-size:' + screenwidth / 720 * 10 + 'px';
+    } else {
+        if (dpr <= 2) {
+            viewPortScale = 1 / window.devicePixelRatio;
+        } else {
+            //- UC 已修复这个BUG
+            //- if (window.navigator.userAgent.indexOf('UCBrowser') !== -1) {
+            //-     viewPortScale =1 .5;
+            //- }
+            viewPortScale = .5;
+        }
+        if (bodywidth < screenwidth) {
+            // 卡牛APP内
+            document.getElementById('viewport').setAttribute('content', 'width=735' + ',user-scalable=no,target-densitydpi=device-dpi,initial-scale=1');
+            if (window.navigator.userAgent.indexOf('UCBrowser') !== -1) {
+                document.getElementById('viewport').setAttribute('content', 'width=device-width' + ',user-scalable=no,target-densitydpi=device-dpi,initial-scale=1.5');
+            }
+        } else {
+            document.getElementById('viewport').setAttribute('content', 'width=' + screenwidth + ',user-scalable=no,target-densitydpi=device-dpi,initial-scale=' + viewPortScale);
+        }
+    }</script>
+</head>
+<body>
+<div class="no-select" id="app" style="min-height: 100%">
+    <div class="mainWrap pad">
+    	<!-- 轮播图 -->
+        <section class="sec">
+	        <div id="slider" class="swipe">
+            <div class="swipe-wrap">
+        <!--        <div style="background-image: url(../image/1.jpg);background-size:cover;"></div>
+                <div style="background-image: url(../image/2.jpg);background-size:cover;"></div>
+                <div style="background-image: url(../image/3.jpg);background-size:cover;"></div>-->
+            </div>
+        </div>
+        </section>
+
+        <div class="onein"><img src="../image/bg-title-01.png"></div>
+
+
+
+        <section class="sec">
+            <div class="onetop clearfix">
+                <a id="first-url" class="onelogo" style="width:33%;border-right: 1px solid #d9d9d9;" onclick="fnOpenHtml('first');">
+                    <div class="toplogo">
+                        <img src="../image/1470910504618.png">
+                    </div>
+                    <div class="title ellipsis">
+                        <span>极速贷款</span>
+                    </div>
+                </a>
+                <a class="onelogo" style="width:33%;border-right: 1px solid #d9d9d9;" onclick="fnOpenLoanList ('HOT');">
+                    <div class="toplogo">
+                        <img src="../image/1470910724954.png">
+                    </div>
+                    <div class="title ellipsis">
+                        <span>贷款推荐</span>
+                    </div>
+                </a>
+                <a id="third-url" class="onelogo" style="width:33%" onclick="fnOpenHtml('third');">
+                    <div class="toplogo">
+                        <img src="../image/1470911805722.png">
+                    </div>
+                    <div class="title ellipsis">
+                        <span>征信报告</span>
+                    </div>
+                </a>
+                </div>
+        </section>
+
+        <section class="sec">
+            <div class="onlywwrap"><a><img
+                    src="../image/pic-search.png"  onclick="fnOpenLoanList ('HOT');"></a></div>
+        </section>
+        <section class="sec nomargin">
+            <div class="wrapfour clearfix">
+                <div class="onerange"><a onclick="fnOpenLoanList ('A');" ><img
+                        src="../image/1470912110767.png"></a></div>
+                <div class="onerange"><a onclick="fnOpenLoanList ('B');" ><img
+                        src="../image/1470912150659.png"></a></div>
+                <div class="onerange"><a onclick="fnOpenLoanList ('C');" ><img
+                        src="../image/1470912176483.png"></a></div>
+                <div class="onerange"><a onclick="fnOpenLoanList ('D');"><img
+                        src="../image/1470912205288.png"></a></div>
+            </div>
+        </section>
+        <div class="onein"><img src="../image/bg-title-02.png"></div>
+        <section class="sec noborder">
+            <div class="wrapHot home-loan-list">
+       
+            
+            </div>
+        </section>
+        
+    </div>
+</div>
+
+<script type="text/javascript" src="../script/zepto.min.js"></script>
+<script type="text/javascript" src="../script/clipboard.min.js"></script>
+<script type="text/javascript" src="../script/js-cookie.js"></script>
+<script type="text/javascript" src="../script/main.js"></script>
+<script type="text/javascript" src="../script/download.js"></script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/SHA1.js"></script>
+<script type="text/javascript" src="../script/APICloud-rest.js"></script>
+<script type="text/javascript" src="../script/doT.min.js"></script>
+<script type="text/javascript" src="../script/swipe.js"></script>
+<script type="text/x-dot-template" id="listT">
+	{{ for (var i = 0; i < it.length; i++) { }}
+		<a class="onelist" onclick="fnOpenLoanWin('{{=it[i].id}}');" title="{{=it[i].title}}">
+			<div class="top clearfix">
+				<div class="logo">
+					<img onload="fnLoadImage(this);" data-url="{{=it[i].cover.url}}" src="../image/loading.png">
+				</div>
+				<div class="info">
+					<div class="title">{{=it[i].name}}</div>
+					<div class="edu">{{=it[i].edu}}</div>
+					<div class="lilv">参考日利率：{{=it[i].rate}}%</div>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="ellipsis">{{=it[i].desc}}</div>
+			</div> 
+		</a>
+	{{ }; }}
+</script>
+<script type="text/x-dot-template" id="swipe-images">
+	{{ for (var i = 0; i < it.length; i++) { }}
+		<div style="background-image: url({{=it[i].cover.url}});background-size:cover;"></div>
+	{{ }; }}
+</script>
+
+<script type="text/javascript">
+	var skip = 0;
+	var limit = 10;
+	var first_url = 'https://www.yirendai.com/LandingPage/wap/ty/';
+	var third_url = 'https://www.yirendai.com/LandingPage/wap/ty/';
+	function fnOpenHtml(type){
+		var redirect = 'https://www.yirendai.com/LandingPage/wap/ty/';
+		if(type == 'first'){
+			redirect = first_url;
+		}
+		
+		if(type == 'third'){
+			redirect = third_url;
+		}	
+		//跳转申请页
+        api.openWin({
+            name: 'apply',
+            url: 'apply.html',
+            bounces: false,
+            pageParam: {redirect : redirect}
+    	});
+	}
+function fnLoadImage (ele_) {
+	var imageURL = $api.attr(ele_, 'data-url');
+	if (imageURL) {
+		api.imageCache({
+		    url: imageURL
+		}, function(ret, err){
+			if (ret.status) {
+				ele_.src = ret.url;
+				$api.removeAttr(ele_, 'data-url');
+			}
+		});
+	}
+}
+
+//更新轮播图
+function fnUpdateCList (data_) {
+		var listTText = $api.byId('swipe-images').text;
+		var fnListT = doT.template(listTText);
+		var html = fnListT(data_);
+		//$api.dom('.home-tuan-list').innerHTML = html;
+		var list = $api.dom('.swipe-wrap');
+		$api.append(list, html);
+		var slider = Swipe(document.getElementById('slider'), {auto:3000,continuous:true});
+		api.parseTapmode();
+//		if (curLocation.lon != 0 && curLocation.lat != 0) {
+//			setTimeout(fnUpdateDistance(data_), 1000);
+//		}
+	}
+	
+function fnUpdateList (data_) {
+		var listTText = $api.byId('listT').text;
+		var fnListT = doT.template(listTText);
+		var html = fnListT(data_);
+		//$api.dom('.home-tuan-list').innerHTML = html;
+		var list = $api.dom('.home-loan-list');
+		$api.append(list, html);
+		api.parseTapmode();
+//		if (curLocation.lon != 0 && curLocation.lat != 0) {
+//			setTimeout(fnUpdateDistance(data_), 1000);
+//		}
+	}
+function fnUpdateHomePage(data_){
+    first_url = data_.first_url;
+    third_url = data_.third_url;  
+}
+function fnLoadData (reload_) {
+		var appId = 'A6972212136837';
+        var appKey = '3035EBAC-DB7A-3A35-9300-91D8959EF9C5';
+    	var client = new Resource(appId, appKey);
+		var loan = client.Factory("loan");
+		var carousel = client.Factory("carousel");
+		if (reload_) {
+			skip = 0;
+		}
+		
+		carousel.query({
+		  "filter": {
+		    "where": {}
+		  }
+		},function(ret,err){
+		  if (ret) {
+		  	if (reload_) {
+		  		$api.dom('.swipe-wrap').innerHTML = '';
+		  	}
+		  	fnUpdateCList(ret);
+
+		  }
+		})
+		
+		loan.query({
+		  "filter": {
+		    "where": {},
+		    "skip": skip,
+		    "limit": limit
+		  }
+		},function(ret,err){
+		  if (ret) {
+		  	skip += limit;
+		  	if (reload_) {
+		  		$api.dom('.home-loan-list').innerHTML = '';
+		  	}
+		  	fnUpdateList(ret);
+		  }
+		})
+		
+		var homepage = client.Factory("homepage");
+		homepage.get({
+		  "_id": '58a96f8a27e27e8f106f0120'
+		},function(ret,err){
+		  fnUpdateHomePage(ret);
+		});
+		
+		api.hideProgress();
+		api.refreshHeaderLoadDone();
+	}
+	function fnOpenLoanWin (loanId) {
+		api.openWin({
+		    name: 'loan',
+		    url: 'loan.html',
+		    bounces: false,
+		    pageParam: {loanId : loanId}
+		});
+	}
+	
+	function fnOpenLoanList (type) {
+		api.openWin({
+		    name: 'loan_list',
+		    url: 'loan_list.html',
+		    bounces: false,
+		    pageParam: {type : type}
+		});
+	}
+apiready = function(){ 
+		
+//  	fnStartLocation();
+    	api.addEventListener({
+    	    name: 'scrolltobottom',
+    	    extra: {
+    	    	threshold: 300
+    	    }
+    	}, function(ret, err){
+    	    fnLoadData(false);
+    	});
+    	api.setRefreshHeaderInfo({
+    		bgColor: '#F0F0F0'
+    	}, function(ret, err){
+    		fnLoadData(true);
+    	});
+    	//api.refreshHeaderLoading();
+    	api.showProgress({
+    	    title: '加载中',
+    	    text: ' 请稍后...',
+    	    modal:  true
+    	});
+    	fnLoadData(false);
+    };	
+</script>
+
+<!--<script type="text/javascript">var _hmt = _hmt || [];-->
+<!--(function () {-->
+    <!--var hm = document.createElement("script");-->
+    <!--hm.src = "https://hm.baidu.com/hm.js?f76452cb31606cbfda56ef1483badd27";-->
+    <!--var s = document.getElementsByTagName("script")[0];-->
+    <!--s.parentNode.insertBefore(hm, s);-->
+<!--})();</script>-->
+</body>
+</html>

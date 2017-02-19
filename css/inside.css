@@ -1,0 +1,141 @@
+body{
+    font-family:'simhei';
+}
+.bread{
+    height:7rem;
+    background:#f7f7f7;
+    margin:0;
+    padding:0;
+    border-bottom:1px #d9d9d9 solid;
+}
+.bread .list{
+    list-style:none;
+    float:left;
+    width:25%;
+    color:#5a5a5a;
+    font-size:2.4rem;
+    font-family:'simhei';
+    text-align:center;
+    line-height:7rem;
+}
+.bread .list:nth-child(4){
+    width:16%;
+}
+.bread i{
+    background:url('../images/icon-split.png') no-repeat 0 0;
+    background-size:cover;
+    width:3.8rem;
+    height:6.9rem;
+    float:right;
+}
+.bread a:last-child i{
+    background:none;
+    height:0;
+}
+.main{
+    background:#ffffff;
+    font-family:'simhei';
+    padding:0 3.4rem;
+}
+.main .head{
+    border-bottom:1px #d9d9d9 solid;
+    padding:4rem 0 3rem;
+}
+.main .head .title{
+    font-size:26px;
+    color:#545454;
+    line-height: 3.4rem;
+}
+.main .head .info{
+    font-size: 16px;
+    color:#ada9a9;
+    overflow:hidden;
+    margin-top:3.8rem;
+}
+.main .head .info .source{
+    float:left;
+    width:60%;
+}
+.main .head .info .time{
+    float:right;
+    width:40%;
+    text-align:right;
+}
+
+.main .content .img img{
+    border:1px #d9d9d9 solid;
+    width:100%;
+    margin:3rem 0;
+}
+
+.main .content .txt{
+    color:#545454;
+    font-size: 22px;
+    width: 100%;
+    overflow: hidden;
+}
+.main .content .txt img{
+    max-width: 100%;
+}
+.main .content .read{
+    margin:40px 0 0;
+    text-align:right;
+    font-size:24px;
+    color:#ada9a9;
+    padding-bottom: 40px;
+}
+.main .content .read img{
+    width:2.4rem;
+    height:1.8rem;
+    margin-right:1rem;
+}
+.favList{
+    border-top:1px #d9d9d9 solid;
+    border-bottom:1px #d9d9d9 solid;
+    background:#ffffff;
+    margin-top:3rem;
+    padding-bottom:3.3rem;
+}
+.favList .title{
+    padding:2.4rem 0;
+    font-size:3.4rem;
+    color:#383838;
+    border-bottom:1px #d9d9d9 solid;
+    position: relative;
+}
+.favList .title img{
+    margin:0 2.4rem;
+    width:3.2rem;
+    height:3.1rem;
+    vertical-align: middle;
+}
+.favList .title a{
+    color: #999999;
+    font-size: 2.8rem;
+    position: absolute;
+    right: 2.4rem;
+    top: 3.2rem;
+}
+.favList .list{
+    color:#5a5a5a;
+    font-size:2.8rem;
+    padding:3.3rem 2.8rem 0;
+    width:100%;
+}
+.favList .list i{
+    width:0.8rem;
+    height:0.8rem;
+    display: inline-block;
+    background:#999999;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    vertical-align: middle;
+    margin-right:1.2rem;
+}
+.foot{
+    width:90%;
+    margin:4rem auto;
+    font-size:2.4rem;
+    color:#cccccc;
+    text-align:center;
+}

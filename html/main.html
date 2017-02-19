@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+	<style>
+		html, body {
+			height: 100%;
+		}
+		body {
+			display: -webkit-box; display: -webkit-flex; display: flex;
+			-webkit-box-orient: vertical; -webkit-flex-flow: column; flex-flow: column;
+		}
+		section {
+			-webkit-box-flex: 1; -webkit-flex: 1; flex: 1;
+		}
+		footer {
+			height: 60px; 
+			background-color: rgb(250,250,250);
+			display: -webkit-box; display: -webkit-flex; display: flex;
+		}
+		footer>div {
+			-webkit-box-flex: 1; -webkit-flex: 1; flex: 1;
+			width: 100%;
+			color: rgb(165,165,165); font-size: 12px; text-align: center; 
+			padding-bottom: 6px; padding-top: 42px;
+		}
+/*		footer>div:nth-child(1) {
+			background: url(../image/footer/home.png) no-repeat center 6px;
+			background-size: auto 30px;
+		}*/
+		footer>div:nth-child(1) {
+			background: url(../image/footer/groupbuy.png) no-repeat center 6px;
+			background-size: auto 30px;
+		}
+		footer>div:nth-child(2) {
+			background: url(../image/footer/find.png) no-repeat center 6px;
+			background-size: auto 30px;
+		}
+		footer>div:nth-child(3) {
+			background: url(../image/footer/my.png) no-repeat center 6px;
+			background-size: auto 30px;
+		}
+/*		footer>div:nth-child(1).active {
+			background: url(../image/footer/home_act.png) no-repeat center 6px;
+			background-size: auto 30px;
+			color: rgb(254,151,84);
+		}*/
+		footer>div:nth-child(1).active {
+			background: url(../image/footer/groupbuy_act.png) no-repeat center 6px;
+			background-size: auto 30px;
+			color: rgb(254,151,84);
+		}
+		footer>div:nth-child(2).active {
+			background: url(../image/footer/find_act.png) no-repeat center 6px;
+			background-size: auto 30px;
+			color: rgb(254,151,84);
+		}
+		footer>div:nth-child(3).active {
+			background: url(../image/footer/my_act.png) no-repeat center 6px;
+			background-size: auto 30px;
+			color: rgb(254,151,84);
+		}
+		.header-item {
+			display: none;
+		}
+		.header-item-act {
+			display: block;
+		}
+		header>div:nth-child(1) {
+			position: relative;
+			background-color: rgb(255,132,0);
+			height: 50px;
+		} 
+		header>div:nth-child(2) {
+			position: relative;
+			height: 50px;
+			background-color: rgb(252,252,252);
+		}
+		header>div:nth-child(3) {
+			position: relative;
+			height: 50px;
+			background-color: rgb(252,252,252);
+		}
+		/* header home */
+		.home-citylist {
+			float: left;
+			height: 50px; line-height: 50px;
+			color: #fff; font-size: 14px; margin-left: 15px;
+		}
+		.home-citylist>img {
+			height: 20px;
+			vertical-align: top;
+			padding-top: 15px;
+		}
+		.home-search {
+			position: absolute; bottom: 8px; left: 90px; right: 60px;
+			height: 34px; line-height: 34px;
+			background-color: rgb(250,102,4);
+			border-radius: 34px;
+			color: rgb(253,194,155); font-size: 14px;
+		}
+		.home-search>img {
+			height: 20px;
+			padding-top: 7px; padding-left: 10px; padding-right: 10px;
+			vertical-align: top;
+		}
+		.home-msg {
+			float: right;
+		}
+		.home-msg>img {
+			height: 28px;
+			padding-top: 11px;
+			vertical-align: top;
+			padding-left: 15px; padding-right: 15px;
+		}
+		/* header groupbuy */
+		.groupbuy-citylist {
+			float: left;
+			height: 50px; line-height: 50px;
+			color: rgb(255,132,0); font-size: 18px; margin-left: 15px;
+		}
+		.groupbuy-citylist>img {
+			height: 15px;
+			vertical-align: top;
+			padding-top: 18px;
+		}
+		.groupbuy-search {
+			position: absolute; bottom: 8px; left: 110px; right: 15px;
+			height: 34px; line-height: 34px;
+			background-color: rgb(232,232,232);
+			border-radius: 34px;
+			color: rgb(153,153,153); font-size: 14px;
+		}
+		.groupbuy-search>img {
+			height: 20px;
+			padding-top: 7px; padding-left: 10px; padding-right: 10px;
+			vertical-align: top;
+		}
+		/* header search */
+		.find-search {
+			position: absolute; bottom: 8px; left: 15px; right: 60px;
+			height: 34px; line-height: 34px;
+			border-radius: 34px;
+			background-color: rgb(232,232,232);
+			color: rgb(153,153,153); font-size: 14px;
+		}
+		.find-search>img {
+			height: 20px;
+			padding-top: 7px; padding-left: 10px; padding-right: 10px;
+			vertical-align: top;
+		}
+		.find-scanner {
+			float: right; width: 50px;
+			background: url(../image/header/qrcode_search.png) no-repeat center 6px;
+			background-size: auto 24px; 
+			padding-top: 33px; 
+			color: rgb(153,153,153); font-size: 12px; text-align: center;
+		}
+		.find-scanner-hov {
+			background-color: #DDD;
+		}
+	</style>
+</head>
+<body>
+	<!-- <header>
+		<div class="header-item header-item-act" id="home">
+			<div class="home-citylist" tapmode onclick="fnOpenCityListWin();">
+				<span class="currentCity">北京</span>
+				<img src="../image/header/arrow_down_home.png">
+			</div>
+			<div class="home-search" tapmode onclick="fnOpenSearchWin();">
+				<img src="../image/header/search_home.png">
+				<span>输入商户名、地点</span>
+			</div>
+			<div class="home-msg" tapmode onclick="fnOpenMessageWin();">
+				<img src="../image/header/msg_home.png">
+			</div>
+		</div>
+		<div class="header-item" id="groupbuy">
+			<div class="groupbuy-citylist" tapmode onclick="fnOpenCityListWin();">
+				<span class="currentCity">北京</span>
+				<img src="../image/header/arrow_down_groupbuy.png">
+			</div>
+			<div class="groupbuy-search" tapmode onclick="fnOpenSearchWin();">
+				<img src="../image/header/search_groupbuy.png">
+				搜索团购...
+			</div>
+		</div>
+		<div class="header-item" id="find">
+			<div class="find-search" tapmode onclick="fnOpenSearchWin();">
+				<img src="../image/header/search_groupbuy.png">
+				输入商户名、地点
+			</div>
+			<div class="find-scanner" tapmode onclick="fnOpenScanner();">
+				扫一扫
+			</div>
+		</div>
+		<div class="header-item" id="my">
+		</div>
+	</header> -->
+	<section></section>
+	<footer>
+		<div class="active" tapmode="active" onclick="fnSwitchFrame(0);">贷款</div>
+<!-- 		<div tapmode="active" onclick="fnSwitchFrame(1);">团购</div> -->
+		<div tapmode="active" onclick="fnSwitchFrame(1);">发现</div>
+		<div tapmode="active" onclick="fnSwitchFrame(2);">我的</div>
+	</footer>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+	var frameNames = ['home', 'find', 'my'];
+	var headerH;
+	var footerH;
+	function fnOpenScanner () {
+		var fnscanner = api.require('FNScanner');
+		fnscanner.openScanner({
+		}, function(ret, err){
+		    if(ret && ret.eventType == "success"){
+				alert(ret.content);
+		    }
+		});
+	}
+	function fnOpenMessageWin () {
+		api.openWin({
+		    name: 'message',
+		    url: 'message.html',
+		    bounces: false,
+		    pageParam: {key : ''}
+		});
+	}
+	function fnOpenCityListWin () {
+		api.openWin({
+		    name: 'citylist',
+		    url: 'citylist.html',
+		    bounces: false,
+		    pageParam: {key : ''},
+		    delay: 200
+		});
+	}
+	function fnOpenSearchWin () {
+		api.openWin({
+		    name: 'search',
+		    url: 'search.html',
+		    bounces: false,
+		    pageParam: {key : ''}
+		});
+	}
+	function fnSwitchFrame (index_) {	
+		// for header switch
+//		var header = $api.dom('header');
+//		var headerItems = $api.domAll(header, '.header-item');
+//		for (var i = 0; i < headerItems.length; i++) {
+//			$api.removeCls(headerItems[i], 'header-item-act');
+//		};
+//		$api.addCls(headerItems[index_], 'header-item-act');
+
+		// for footer divs
+		var footer = $api.dom('footer');
+		var footerDivs = $api.domAll(footer, 'div');
+		for (var i = 0; i < footerDivs.length; i++) {
+			$api.removeCls(footerDivs[i], 'active');
+		}
+		$api.addCls(footerDivs[index_], 'active');
+
+		// for frame switch
+		for (var i = 0; i < frameNames.length; i++) {
+			api.setFrameAttr({
+			    name: frameNames[i]+'_frame',
+			    hidden: true
+			});
+		};
+//		var frameHeaderH = headerH;
+//		if (index_ == 3) {
+//			frameHeaderH = headerH - 50;
+//		}
+		api.openFrame({
+		    name: frameNames[index_]+'_frame',
+		    url: frameNames[index_]+'_frame.html',
+		    bounces: false,
+		    rect: {
+		    	x: 0,
+		    	y: 0,
+		    	w: 'auto',
+		    	h: api.frameHeight - footerH
+		    },
+		   	vScrollBarEnabled:false,
+            hScrollBarEnabled:false
+		});
+	}
+    apiready = function(){
+    	api.addEventListener({
+    	    name: 'keyback'
+    	}, function(ret, err){
+    	    api.closeWidget();
+    	});
+
+//    	api.addEventListener({
+//    	    name: 'selectedcity'
+//    	}, function(ret, err){
+//    	    var currentCity = $api.domAll('.currentCity');
+//    	    for (var i = 0; i < currentCity.length; i++) {
+//    	    	currentCity[i].innerHTML = ret.value.cityName;
+//    	    };
+//    	});
+
+    	var home = $api.byId('home');
+//    	var groupbuy = $api.byId('groupbuy');
+    	var find = $api.byId('find');
+    	var my = $api.byId('my');
+
+    	$api.fixIos7Bar(home);
+//    	$api.fixIos7Bar(groupbuy);
+    	$api.fixIos7Bar(find);
+    	$api.fixIos7Bar(my);
+    	
+//  	headerH = $api.offset(home).h;
+    	var footer = $api.dom('footer');
+    	footerH = $api.offset(footer).h;
+    	api.openFrame({
+    	    name: 'home_frame',
+    	    url: 'home_frame.html',
+    	    bounces: false,
+    	    rect: {
+    	    	x: 0,
+    	    	y: 0,
+    	    	w: 'auto',
+    	    	h: api.frameHeight - footerH
+    	    },
+    	    vScrollBarEnabled:false,
+            hScrollBarEnabled:false
+    	});
+    };
+</script>
+</html>

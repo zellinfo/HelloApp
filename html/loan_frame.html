@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://m.jiedianqian.com/index.html#!/institution?detail=1044 -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="viewport"
+          content="width=735,user-scalable=no,target-densitydpi=device-dpi,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="baidu-site-verification" content="sx8E1jvIfp">
+    <title id="title">贷款</title>
+
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/swiper.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script>/** 布局函数,基于720设计稿 **/
+    var bodywidth = document.getElementsByTagName('html')[0].clientWidth;
+    var screenwidth = window.screen.width;
+    var viewPortScale;
+    var dpr = window.devicePixelRatio;
+    // WEBVIEW未设置缩放
+    if (bodywidth == screenwidth) {
+        document.getElementById('viewport').setAttribute('content', 'user-scalable=no,width=' + screenwidth);
+        document.getElementsByTagName('html')[0].style.cssText = 'font-size:' + screenwidth / 720 * 10 + 'px';
+    } else {
+        // DPR缩放,解决半像素问题
+        if (dpr <= 2) {
+            viewPortScale = 1 / window.devicePixelRatio;
+        } else {
+            viewPortScale = .5;
+        }
+        if (bodywidth < screenwidth) {
+            // 卡牛APP内
+            document.getElementById('viewport').setAttribute('content', 'width=735' + ',user-scalable=no,target-densitydpi=device-dpi,initial-scale=1');
+            if (window.navigator.userAgent.indexOf('UCBrowser') !== -1) {
+                document.getElementById('viewport').setAttribute('content', 'width=device-width' + ',user-scalable=no,target-densitydpi=device-dpi,initial-scale=1.5');
+            }
+        } else {
+            document.getElementById('viewport').setAttribute('content', 'width=' + screenwidth + ',user-scalable=no,target-densitydpi=device-dpi,initial-scale=' + viewPortScale);
+        }
+    }</script>
+    <link href="../css/app.css" rel="stylesheet">
+</head>
+<body>
+<div id="app" style="min-height: 100%" class="no-select">
+    <div class="wrapit-pub" >
+        <div class="bg-box"  style="display: none;"></div>
+        <div class="pub-box" >
+            <div class="pop"  style="display: none;">
+                <div class="title" > 确认要申请宜人贷贷款</div>
+                <div class="detail" ><p > 贷款金额：1000元 </p>
+                    <p > 贷款期限：31日 </p></div>
+                <div class="main-confirm" >
+                    <button >确定</button>
+                </div>
+                <div class="main-cancel" >
+                    <button >取消</button>
+                </div>
+            </div>
+            <div class="pop"  style="display: none;">
+                <div class="title" > 经检验你的资料不符合，无法申请本产品哦。</div>
+                <div class="main-confirm" >
+                    <button >知道了</button>
+                </div>
+            </div>
+            <div class="pop"  style="display: none;">
+                <div class="title" > 你已经申请过宜人贷的贷款，建议您去申请其他机构的贷款产品</div>
+                <div class="main-confirm" >
+                    <button >更多贷款产品</button>
+                </div>
+                <a href="http://jiedianqian.com/m/?from=calcnewslist" target="_blank" class="main-download"
+                   >
+                    <div class="main-confirm" >
+                        <button >下载借点钱查询贷款进度</button>
+                    </div>
+                </a>
+                <div class="main-cancel" >
+                    <button >知道了</button>
+                </div>
+            </div>
+            <div class="pop"  style="display: none;">
+                <div class="title" > 经检测你的资料不符合，无法申请本产品哦。</div>
+                <div class="main-confirm" >
+                    <button >尝试信贷经理一对一贷款服务</button>
+                </div>
+                <div class="main-cancel" >
+                    <button >知道了</button>
+                </div>
+            </div>
+            <div class="pop"  style="display: none;">
+                <div class="title" > 经检测你的资料不符合，无法申请本产品哦。</div>
+                <div class="main-confirm" >
+                    <button >尝试其它推荐的贷款产品</button>
+                </div>
+                <div class="main-cancel" >
+                    <button >知道了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapit" id="register"  style="display: none;">
+        <div class="bg-box" ></div>
+        <div class="boxed" >
+            <div class="popBoxed clearfix" ><a id="close" class="close" ></a>
+                <div class="content" >
+                    <div class="title" > 请验证姓名、手机号哦</div>
+                    <div class="main-list" >
+                        <div class="list" ><input type="text" placeholder="请输入手机号码" maxlength="11"
+                                                                ></div>
+                        <div class="list" ><input type="text" placeholder="请输入下方图片上的内容" >
+                        </div>
+                        <div class="list valid-img " ><img class="pic-valid" 
+                                                                        src="./main.html"> <a
+                                id="changeImgUrl" >看不清楚，换一张</a></div>
+                        <div class="list vertify" ><input type="text" placeholder="请输入验证码" >
+                            <button type="button"  class>发送验证码</button>
+                        </div>
+                        <div class="comfirm-submit" >
+                            <button >确定并提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main-wrap" class="detail-body">
+    <!-- body区域 -->
+    </div>
+    <div class="main-fill-apply apply-body" >
+        <!--<button id="submit" onclick="fnOpenRegisterWin ();">填写资料并申请</button>-->
+    </div>
+</div>
+<script src="../script/swiper.js"></script>
+<script src="../script/sign.min.js"></script>
+<script src="../script/code_modal.min.js"></script>
+<script type="text/javascript" src="../script/app.bcc9a00d9e22abbec2a9.js"></script>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/SHA1.js"></script>
+<script type="text/javascript" src="../script/APICloud-rest.js"></script>
+<script type="text/javascript" src="../script/doT.min.js"></script>
+<script type="text/x-dot-template" id="apply-body">
+	<i ></i>
+	<button id="submit" onclick="fnUpdateUserInfo('{{=it.redirect}}');">填写资料并申请</button>
+</script>
+<script type="text/x-dot-template" id="detail-body">
+
+        <div class="wrap" >
+            <div class="main" >
+                <div class="list" >
+                    <div class="con-up clearfix" >
+                        <div class="con-left" >
+                        	<img onload="fnLoadImage(this)" data-url="{{=it.cover.url}}" src="../image/loading.png">
+                        </div>
+                        <div class="con-center" style="margin-left:0px;float: left; position: relative;width: 61%;">
+                            <div class="title ellipsis" >{{=it.name}}</div>
+                            <div class="detail" >
+                                <ul >
+                                	{{ for (var i = 0; i < it.tags.length; i++) { }}
+                                	
+                                    <li class="flag" >
+                                    	<span >{{=it.tags[i]}}</span> 
+                                    	<img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAWCAIAAAB7WupNAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo2MTQzY2U0OC1mMTlhLTQ2NzItYjRkMC0wNWFlY2E0MDc4NDkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RTIxMDdENTRBNjRCMTFFNjlFM0VCOTBCMTg3MjQxQjQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RTIxMDdENTNBNjRCMTFFNjlFM0VCOTBCMTg3MjQxQjQiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDphMjdmODFiOC1iZDg4LTQxOGEtOGYyOS03ZGNmODQxZTlhYTkiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDoxY2U4Zjk4OS01NzE2LTExNzktYWEzMy1hZjlkNGFkMjdlYTciLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5y1PMYAAABe0lEQVR42oTSyytEcRQH8HPOXGTrGZvxnDwaIW/RTEnKwkKRhaKIBeXxbyBiMQvFQknKVklGpsljNJI0HnmLvDcizP0dvxuJ8RtO/bp38bnn3M7vC95z4XDruuA/SnMfsveMBYu2EiIEZVF7KVnj0XPCo8tCcBCkEXSUUWYcrhzz2KqcqkLyhJigs5zSYlGOHl9TtKOPR6gJumxkiQHXAU94Ah19vUnXbTOlRoNznyfXf4yl71+EabKfKTkK5/fElJfVSFZ4CPTYKTES53bE9Aar0YfrtZM5Amd9YmbTcMisXs7jC/QtiNMHrrESwb/FoEZPr9DvNNpUZ1BNFirQ85shTu65Kp1qs1Hx41IMOMXRHVemUV3O54Vr38WLHwYX9YNbqLBQfS4q9vSqG2L/Bmwp2JCH+HvjUgwtit1rKEvGxoLAXBnoTYfhJeG74tIkbCpQJI/8AkZcYvuSixKwuZBQFU5yuMXWBeebsaU4aHw1OUKGrjW4kPUuwADgsbKWOgRI2QAAAABJRU5ErkJggg=="
+                                            class="icon-directive-right" >
+                                    </li>
+                                    {{ }; }}
+                                </ul>
+                                <p>
+                                	<span >{{=it.num}}</span><i>人成功申请</i>
+                                	<br/>
+                                	<span class="rate" >成功率：</span>
+                                        {{ for (var i = 0; i < parseInt(it.score); i++) { }}
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAVCAIAAADTi7lxAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo2MTQzY2U0OC1mMTlhLTQ2NzItYjRkMC0wNWFlY2E0MDc4NDkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RjlCNzJFNTQxQjEwMTFFNkE3REVEQzFFRUZGNDNDQkEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RjlCNzJFNTMxQjEwMTFFNkE3REVEQzFFRUZGNDNDQkEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4ODJkNGU0Yi00NTZkLTRhNDktYjg3OS1kMjRjYjliZWQwYmIiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo3NTUyY2RmOC01M2ZkLTExNzktOGM4Ny05MjczOWVmMzExODAiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7C9VbYAAABc0lEQVR42qTUO0vDUBQH8H9q1NqOglBBQZTaIiIqOPkFXF39AG5OujlJcdDJTQeXzqJ+AnERqoJa8VGLSl/4qKBSS9JH2uNNEEzS9t6m/U/JvYdfTjjJBQlTSNPLtrAKYii+SGd9OseNC/zkTvC5g2oWqRC/kAuRhsTq3zXjGNoi9B6Gevx/y1BGO4bKH8isWVYYyugGkeusad9QY3jdRSVp32J0lw+eINyDtiYkqpahPkN9gBKDcgvlGqVLCONi3DQ84zrqGUWPX6L8DWLz0OJoJ/0bLnjHEDiE7G9HwcCK8Z7eoGEFWlI2mWKamm7tO7Z0Zblm/E4tk2JMjf1v5vyc425GrPQuYWSL+0FKclPtSJ2iL7uYaQoqJoRQqjnoUQQVaiCpu84ESlFUC/yOTD13DMG3joknTEYxfADvnPWRaeuZY8vFFEVAV7P0FiYtb9/NneoHZsSt13wdNT5qK0W6XzAqKtxTPEXJEGX3zGu/AgwADixw/Rpt7pQAAAAASUVORK5CYII=">
+                                        {{ }; }}   
+                                </p>
+                            </div>
+                            <div class="icon-arrow-right" ></div>
+                        </div>
+                    </div>
+                    <div class="con-down" ><span >{{=it.desc}}</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="detail-info" >
+            <div class="contain-up" >
+                <div class="icon-trig" ></div>
+                <div class="wrap-up clearfix" >
+				  	<div class="list" style="margin-right: 3.9rem;width: 45%;position: relative;float: left;">
+				  		<input type="text" name="name" > 
+				  		<span class="unit">元</span>
+                        <div class="money-range" > {{=it.edu}}</div>
+                    </div>
+                    <div class="list select"  style="margin-right: 3.9rem;width: 45%;position: relative;margin-right: 0;float: right;">
+                        <div class="choose" ><input type="number" > <span class="month"  >日</span>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAHCAIAAABY54BwAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo2MTQzY2U0OC1mMTlhLTQ2NzItYjRkMC0wNWFlY2E0MDc4NDkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MUJGQzBFMUExRDhFMTFFNkIzNUVERDM0MUJCNDU2QzMiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MUJGQzBFMTkxRDhFMTFFNkIzNUVERDM0MUJCNDU2QzMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4NmRhMjA2Yy03YjcyLTQ4YjYtYWUwZC1hYWZkZjIyYmYzYjEiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDowZjEzYzlhOC01NjI1LTExNzktYjA1ZC05OWRkZTgyZDI1NzYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4U1iZFAAAA6UlEQVR42mJcceTgzgtnfU3MA82tGHCAzWdOrj95zNPIhCXM2u7H719APhc7u7uBMabS/VcuApU66uiFWNqyMDIwxNo7//z9e9XRQ1zsHLaa2shKT9y6seTQfks1jWg7J6BKFqAQEyNjsrM7UMPC/bu52NiMlVUhSi8/vD9v3y4DBaUkZ3egGpBKiAQzE1Omu7e6tMzM3duvPn4IFLn74vnUHVtUJaUy3L2AshBljP///4fb++vPn+4Nax6/fQ20F+h7KUHBEv8QdlZWuAIU1UDw/dfPzvWrH715LSssUh4YCvQJsixAgAEAb+JYV+hxeRwAAAAASUVORK5CYII="
+                                 class="icon-arrowdown" ></div>
+                        <div class="date-range" > {{=it.data_range}}</div>
+                    </div>  
+                </div>
+            </div>
+            <div class="wrap-down" >
+                <div class="contain clearfix" >
+                    <div  class="list short">
+                        <div class="number" > {{=it.rate}} <span >％</span></div>
+                        <div class="des" > 日利率</div>
+                    </div>
+                    <div  class="list short">
+                        <div class="number" > {{=it.time}} <span >小时</span></div>
+                        <div class="des" > 最快放款时间</div>
+                    </div>
+                </div>
+                <div class="repay" > 按日计息,随借随还</div>
+            </div>
+        </div>
+        <div class="section-apply-condition" >
+            <div class="title" ><img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAbCAIAAAAGQ7M/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo2MTQzY2U0OC1mMTlhLTQ2NzItYjRkMC0wNWFlY2E0MDc4NDkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RkNFRUM0REQxRDg2MTFFNkI2QTk4QzI5REQyM0E2NzEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RkNFRUM0REMxRDg2MTFFNkI2QTk4QzI5REQyM0E2NzEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4NmRhMjA2Yy03YjcyLTQ4YjYtYWUwZC1hYWZkZjIyYmYzYjEiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDowZjEzYzlhOC01NjI1LTExNzktYjA1ZC05OWRkZTgyZDI1NzYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5/G9lHAAACJklEQVR42mL8//8/A7ng0pcP817cO/Pl/QZtGxFWdob/ZIEbXz+GXj3KcHiN3YV9L39+hwiykOqWH//+tj681vLsDsP/f7Ei0rPUTDmYmCFSpJl1+euH+Junz3/7BGQ3yajXKOgwIsmSYNaKVw8j75xn+PcXyO6Q0yqX00RTwESkQb2Pb0TeOgMxqE5aDdMg7Gbd+PZp1rO7d79/gYtMeHKz5OFVCDtMSLJBURerfeh+nPHsTua9i0CGBgf3RSM3NiamRS/uFz64ApHV5+SdrWbKiMPt6O66A3POjR9fZz67c/Xrx3iw0SDAyLRA3ZSPhZWBSLOCRWTg7LonN2NunoSEERA0SKsa8AjiCVMWYFhIs3GGislB+Jb8Iqbc/Ke/fgSyP/z5deHPL4i4HBtHiawGhP357++5z+9hMQsYFq58InCzgKBUWi3s1mk0dbUyGtzM0MD9+Oc3PAQZ8KevYDFZs6e3ToGdBgGybBxxEopwrigr+wEdW2Qtxfcvnv36iQVbEDJOVDawvHyIAZbtM8QVgREKV8DOxGwvIIasRYiZDWdateAT6ZPThpnNlCypREx6xpmHCmXVRVjZlr5+lCahJM7GQZFZQBAroRiLFExEmfXg1zdgymCgAABNAKVlYHnGQCXAuP71Y6qZRUl5T2b5RVo83vz26cSnt6Tqt+ATVufiQzfr579/72E5mXgA1DWEwmv1q0d1j66Rqr9JTgteXgEEGAC++wMeirpaEAAAAABJRU5ErkJggg=="
+                    > 申请条件
+            </div>
+            <div class="content" >{{=it.condition}}</div>
+        </div>
+        <div class="section-apply-condition" >
+            <div class="title material" ><img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAbCAYAAACJISRoAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDg3N0NGMTUzMTQ4MTFFNjlBMkQ5Q0ZGNTFENzFGMkQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDg3N0NGMTYzMTQ4MTFFNjlBMkQ5Q0ZGNTFENzFGMkQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0ODc3Q0YxMzMxNDgxMUU2OUEyRDlDRkY1MUQ3MUYyRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0ODc3Q0YxNDMxNDgxMUU2OUEyRDlDRkY1MUQ3MUYyRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pirk3WcAAAI9SURBVHja7JZNSFZREIa/q5+FKQoRYkW5UVOIQqzoBxSilm6LaGXhInCTLgrctHETiBGFuqptYFC5ERdBUhClrcr+qEhdWGll9mOFfj0T74Xj7Xi5Sp8rDzwK42HemTkzcw0ymUwq2ycntQJnRUTSwd3rc1kWm0/bD3gOd/6zmPmthwoTsZcfhFNZyKIbyuMir4TLyvAq7F/2myxiPwR9sBYmYQ8ch1a46NwrhvWQC1/hA8wl6a7N0AnvYTeUwA54BGfhgHO3CZ7BS+iBDUkzMZHt0AbDspmT89AL++Ce7IO6tw6eKJtEIsX6PRGxf4Lfzt/tPBBLHsZxddzBiL0G8uCVY2tWMNPwUXyB+1CoNvZmMq6ualYQvXqHFuhXQ4TnLdyGNaFDNcEo/Ior1wycgwJohGOy90t4yrnbFxH1VsonYiXZBY+hCsr0oJtssOCNE3WDgvBlcmaxcllnPYSN8FrdM6Bus/mo1Qo6qQ4r09vlO/NhPkck7H34LRK4IIdDsltWh9XG22Cn7Jeg1BlKowj2KvsF5Qq/XFae73ADPnta2JrghDJIaVjrVeJ5J3Cb/Cuh33TkkSzKb6q777yDMUfE9lm7Wxqdp3AtKpJRNFUSGU0gUqpVcgsC506g9p2JlitQupbBj5iW/KkJDwdzNibrf9ZKoJXRkmBzty9n1ZtAHXQ53ZanknXqu9Kq1eHbcx3wAk7DVgUbfhnNb5CW42oRfbweDeDRmEBvahUd8fj4Kxas/t+1lPNHgAEAhPiLEWLhfuoAAAAASUVORK5CYII="
+                    > 所需材料
+            </div>
+            <div class="content" >{{=it.materials}}</div>
+        </div>
+
+</script>
+
+<script>
+    function fnUpdateUserInfo (url) {
+        var userInfo = $api.getStorage('userInfo');
+        if (userInfo) {
+            //跳转申请页
+            api.openWin({
+	            name: 'apply',
+	            url: 'apply.html',
+	            bounces: false,
+	            pageParam: {redirect : url}
+        	});
+        }else{
+        	//跳转登陆页
+        	api.openWin({
+	            name: 'login',
+	            url: 'login.html',
+	            bounces: false,
+	            pageParam: {key : ''}
+        	});
+        }
+        
+    }
+    
+	function fnLoadImage (ele_) {
+	var imageURL = $api.attr(ele_, 'data-url');
+	if (imageURL) {
+		api.imageCache({
+		    url: imageURL
+		}, function(ret, err){
+			if (ret.status) {
+				ele_.src = ret.url;
+				$api.removeAttr(ele_, 'data-url');
+			}
+		});
+	}
+}
+	
+	function fnUpdateInfo (data_) {
+		var detailBody = $api.byId('detail-body').text;
+		var applyBody = $api.byId('apply-body').text;
+		var fnShowDetail = doT.template(detailBody);
+		var fnShowApply = doT.template(applyBody);
+		var html = fnShowDetail(data_);
+		var list = $api.dom('.detail-body');
+		$api.append(list, html);
+		var html2 = fnShowApply(data_);
+		var list2 = $api.dom('.apply-body');
+		$api.append(list2, html2);
+		api.parseTapmode();
+	}
+	
+	apiready = function(){
+		var appId = 'A6972212136837';
+        var appKey = '3035EBAC-DB7A-3A35-9300-91D8959EF9C5';
+    	var loanId = api.pageParam.loanId;
+    	var client = new Resource(appId, appKey);
+		var loan= client.Factory("loan");
+		loan.get({
+		  "_id": loanId
+		},function(ret,err){
+		  fnUpdateInfo(ret);
+		});
+    };
+</script>
+</body>
+</html>

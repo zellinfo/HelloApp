@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <style>
+    html,body{
+       height: 100%;
+       background-color: #f0f0f0; 
+    }
+    input {
+    	height: 50px; width: 80%;
+    	font-size: 18px;color: #8E8C8C;
+    }
+	input::-webkit-input-placeholder {
+		color: #ccc;
+	}
+	.h15 {
+		height: 15px
+	}
+	.phone, .captcha, .passwd {
+		background: #fff;
+	}
+	.phone img, .passwd img, .captcha img {
+		vertical-align: top;
+	}
+	.item {
+		background-color: #fff; 
+		border-bottom: 1px solid #e0e0e0;
+		position: relative;
+	}
+	.btn {
+		margin:3px 10px;
+		background: #ff6836;
+		height: 40px; line-height: 40px; 
+		text-align: center;
+		font-size: 20px; margin-top: 20px; 
+		border-radius: 5px;
+		color: #fff;
+	}
+	.phone img {
+		width: 25px; margin-top: 15px; margin-left: 10px; margin-right: 9px;
+	}
+	.captcha img {
+		width: 25px; margin-top: 15px; margin-left: 10px; margin-right: 9px;
+	}
+	.passwd img {
+		height: 25px;margin-top: 15px; margin-left: 10px;margin-right: 10px;
+	}
+	.captcha_img{
+		vertical-align: top;position: absolute;width:100px;right:0px;height: 35px;margin-top: 8px;margin-right: 8px;
+	}
+	.captcha_img img{
+		height: 35px;width:100px;margin:0px;
+	}
+	input {outline: none;}
+    </style>
+</head>
+<body>
+	<section class="h15"></section>
+	<section>
+		<div class="item phone">
+			<img src="../image/login01.png">
+			<input type="text" placeholder="手机号" id="phone">
+		</div>
+				<div class="item passwd">
+			<img src="../image/login02.png">
+			<input type="password" placeholder="密码" id="passwd">
+		</div>
+		<div class="item captcha">
+			<img src="../image/login03.png">
+			<span class="captcha_img" style="" onclick="resetCaptcha(cap);"></span>
+			<input type="password" placeholder="验证码" id="captcha">
+		</div>
+		<div class="item captcha">
+			<img src="../image/login03.png">
+			<input type="button" class="btn" id="captcha_btn" name="获取验证码" onclick="fnSmsCaptcha(this);" value="获取验证码" style="color:#807d7d;;background:#dedede;position: absolute;width:100px;right:0px;height: 35px;line-height: 35px;margin-top: 8px;font-size: medium">
+			<input type="text" placeholder="短信验证码" id="smsCaptcha">
+		</div>
+
+		<div class="btn" tapmode onclick="fnRegister();">注 册</div>
+	</section>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/SHA1.js"></script>
+<script type="text/javascript" src="../script/APICloud-rest.js"></script>
+<script type="text/javascript" src="../script/jquery.js"></script>
+<script type="text/javascript" src="../script/Captcha.jquery.js"></script>
+<script type="text/javascript">
+	var client;
+	
+	function toast(message){
+		if(typeof(api)!="undefined"){
+			api.toast({
+			    msg: message,
+			    duration: 2000,
+			    location: 'bottom'
+			});
+		}else{
+			alert(message)
+		}	
+	}
+	var wait=60;
+	var clickTime = 0;
+	function fnSmsCaptcha(o){
+//		var imageCode = $api.byId('captcha').value
+//		if(clickTime != 0) {
+//			cap = new Captcha(client.appId,client.appCode);
+//			resetCaptcha(cap);	
+//		}
+		
+		clickTime++;
+		if($api.byId('phone').value == ""){
+			toast("手机号不能为空");
+			return
+		}	
+		
+		if($api.byId('captcha').value == ""){
+			toast("验证码不能为空");
+			return
+		}
+		
+		$.ajax({
+//		    url: "https://d.apicloud.com/mcm/api/user/sendvercode",
+			url: "http://127.0.0.1:8081/sendvercode",
+		    method: "POST",
+		    cache: false,
+		    headers: {
+		        "X-APICloud-AppId": client.appId,
+		        "X-APICloud-AppKey": client.appCode
+		    },
+		    data: {
+		        "mobile":$api.byId('phone').value,
+		        "imageCode":$api.byId('captcha').value,
+		        "token":cap.getToken()
+		    },
+		    success: function(data, status, header){
+		    //success body
+			    if(typeof(data.error)!="undefined"){
+			    	if(data.error.message=='Invalid imageCode'){
+			    		toast("验证码错误，请重新输入")
+			    	}else if(data.error.message=='11:Insufficient isv permissions'){
+			    		toast("内部服务异常");
+//			    		cap = new Captcha(client.appId,client.appCode);
+			    	}else{
+			    		toast("未知异常");
+//			    		cap = new Captcha(client.appId,client.appCode);	
+			    	}
+			    	
+			    }else if(typeof(data.status)!="undefined" && data.status!=1){
+			    	toast("业务流控制");
+			    }else{
+			    		toast("发送成功");
+//			    		cap = new Captcha(client.appId,client.appCode);
+						resetCaptcha(cap);	
+			    		time(o)
+			    		
+			    }
+			},
+			error:function(header, status, errorThrown){
+				alert("fail")//fail body
+			}
+		})
+	}
+	
+	function time(o){
+		if (wait == 0) {
+            o.removeAttribute("disabled");            
+            o.value="获取验证码";
+            wait = 60;
+        } else {
+            o.setAttribute("disabled", true);
+            o.value="重新发送(" + wait + ")";
+            wait--;
+            setTimeout(function() {
+                time(o)
+            },
+            1000)
+        }	
+	}
+	
+	
+	function fnRegister () {
+		if($api.byId('phone').value == ""){
+			toast("手机号不能为空");
+			return
+		}	
+		if($api.byId('passwd').value == ""){
+			toast("密码不能为空");
+			return
+		}
+		if($api.byId('smsCaptcha').value == ""){
+			toast("短信验证码不能为空");
+			return
+		}
+	
+		$.ajax({
+//		    url: "https://d.apicloud.com/mcm/api/user/checkvercode",
+			url: "http://127.0.0.1:8081/checkvercode",
+		    method: "POST",
+		    cache: false,
+		    headers: {
+		        "X-APICloud-AppId": client.appId,
+		        "X-APICloud-AppKey": client.appCode
+		    },
+		    data: {
+		        "mobile":$api.byId('phone').value,
+		        "username":$api.byId('phone').value,
+		        "vercode":$api.byId('smsCaptcha').value,
+		        "password":$api.byId('passwd').value,
+		        "token":cap.getToken()
+		    },
+		    success: function(data, status, header){
+			    cap.setToken()
+			    //success body
+			    api.toast({
+		       		msg: '注册成功',
+		       		duration: 2000,
+		       		location: 'middle'
+			    });
+		    	api.closeWin();
+			},
+			error:function(header, status, errorThrown){
+				api.toast({
+		       		msg: '注册失败',
+		       		duration: 2000,
+		       		location: 'middle'
+			    });
+			}
+		})
+	
+//		var User= client.Factory("user");
+//		User.save({
+//		  "captcha": $api.byId('captcha').value,
+//		  "username": $api.byId('phone').value,
+//		  "password": $api.byId('passwd').value
+//		},function(ret,err){
+//		   //alert($api.jsonToStr(ret));
+//		   if (ret && ret.id) {
+//		   		api.toast({
+//		       		msg: '注册成功',
+//		       		duration: 2000,
+//		       		location: 'middle'
+//		    	});
+//		    	api.closeWin();
+//		   }
+//		})
+	}
+	var cap;
+	
+	
+	
+	function resetCaptcha(c){
+		 c.getImage(function(err,img){
+	    	if(err) return;
+	    	$(".captcha_img").html(img);
+		})
+	}
+    apiready = function(){
+    	var appId = 'A6972212136837';
+        var appKey = '3035EBAC-DB7A-3A35-9300-91D8959EF9C5';
+    	client = new Resource(appId, appKey);
+    	cap = new Captcha(client.appId,client.appCode);
+	    resetCaptcha(cap)
+    };
+    
+    apiready();
+</script>
+</html>

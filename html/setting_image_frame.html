@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>setting</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <style>
+        html, body{
+            height: 100%; 
+            background: #f0f0f0;
+        }
+        .title {
+            background-color: rgb(138,136,129);
+            height: 44px; line-height: 44px;
+            padding-left: 10px;
+            color: #fff; font-size: 14px;
+            border-bottom: solid rgb(96,96,96) 1px;
+        }
+        .item {
+            background-color: #f0f0f0;
+            height: 44px; line-height: 44px;
+            padding-left: 10px; color: #000; font-size: 14px;
+            border-bottom: solid rgb(215,215,215) 1px;
+        }
+        .item>img {
+            float: right; 
+            padding-top: 10px; padding-right: 10px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <span>图片显示设置</span>
+    </div>
+    <div id="switch" class="item" tapmode onclick="fnDoSwitch()">
+        <span>非Wi-Fi下显示图片</span>
+        <img id="switchPic" src="../image/switch_on.png">
+    </div>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    function fnDoSwitch () {
+        api.getPrefs({
+            key: 'not_wifi_show_image'
+        }, function(ret, err){
+            var v = ret.value;
+            if (v == '0') {
+                api.setPrefs({
+                    key: 'not_wifi_show_image',
+                    value: '1'
+                });
+                var switchPic = $api.byId('switchPic');
+                switchPic.src = '../image/switch_on.png';
+            } else {
+                api.setPrefs({
+                    key: 'not_wifi_show_image',
+                    value: '0'
+                });
+                var switchPic = $api.byId('switchPic');
+                switchPic.src = '../image/switch_off.png';
+            }
+        });        
+    }
+    apiready = function(){
+        api.getPrefs({
+            key: 'not_wifi_show_image'
+        }, function(ret, err){
+            var v = ret.value;
+            if (v == '0') {
+                var switchPic = $api.byId('switchPic');
+                switchPic.src = '../image/switch_off.png';
+            } else {
+                var switchPic = $api.byId('switchPic');
+                switchPic.src = '../image/switch_on.png';
+            }
+        });
+    };
+</script>
+</html
